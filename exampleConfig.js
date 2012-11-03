@@ -46,9 +46,11 @@ Optional Variables:
 
   repeater:         an array of hashes of the for host: and port:
                     that details other statsd servers to which the received
-                    packets should be "repeated" (duplicated to).
+                    packets should be "repeated" (duplicated to). Repeaters
+                    default to udp4, but can be configured to use udp6.
                     e.g. [ { host: '10.10.10.10', port: 8125 },
-                           { host: 'observer', port: 88125 } ]
+                           { host: 'observer', port: 88125, protocol: "udp6" } ]
+
 */
 {
   graphitePort: 2003
