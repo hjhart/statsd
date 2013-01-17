@@ -121,7 +121,7 @@ StatsD includes the following built-in backends:
   time-series data store that provides visualization through a web-browser.
 * Console (`console`): Outputs the received
   metrics to stdout (see what's going on during development).
-* Repeater (`repeater`): Utilizes the `packet` emit API to
+* Repeater (`repeater`): Utilizes the `packet` or `flush` emit API to
   forward raw packets retrieved by StatsD to multiple backend StatsD instances.
 
 A robust set of [other backends](https://github.com/etsy/statsd/wiki/Backends)
