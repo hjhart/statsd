@@ -72,7 +72,7 @@ UDPRepeaterBackend.prototype.flush = function(time_stamp, metrics) {
       stat = statistics[type];
       for(metric in stat.data) {
         if(self.ignore.indexOf(metric) >= 0) continue;
-        if(stat.data[metric] == 0) continue;
+        if(stat.data[metric] == 0 && type != 'gauge') continue;
 
         packet = new Buffer(metric + ":" + stat.data[metric] + "|" + stat.suffix);
         self.sock.send(packet,0,packet.length,hosts[i].port,hosts[i].host,logerror);
